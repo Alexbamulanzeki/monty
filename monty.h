@@ -46,4 +46,5 @@ typedef struct instruction_s
 
 extern instruction_t opcodes[];
 void push(stack_t **stack, char *n, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 #endif
