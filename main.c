@@ -1,12 +1,11 @@
 #include "monty.h"
 
-
 /**
 * opcode_finder - find opcode
 * @stack: stack pointer
 * @opcode: user input opcode
 * @line_number: line number
-* Return: Always 1 (Success) or stderr
+* Return: Always 1 or stderr
 **/
 int find_opcode(stack_t **stack, char *opcode, int line_number)
 {
@@ -31,7 +30,6 @@ return (EXIT_SUCCESS);
 fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 exit(EXIT_FAILURE);
 }
-
 
 /**
 * main - Process Monty byte codes from a file passed in as an argument
@@ -59,7 +57,7 @@ if (mf == NULL)
 fprintf(stderr, "Error: can't open file %s\n", argv[1]);
 exit(1);
 }
-while ((getline(&buff, &lol, mf)) != -1)
+while ((getline(&buff, &lol, mf) != -1))
 {
 line_number++;
 opcode = strtok(buff, DELIMATOR);
